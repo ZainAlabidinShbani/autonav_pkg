@@ -85,19 +85,15 @@ rosservice call /set_goal "x: 5.0 y: 4.0"
 ```
 ## Nodes (brief)
 
-complex_obstacles_node — publishes static obstacles as visualization_msgs/MarkerArray on /obstacles.
-
-lidar_from_markers_tf — listens to /obstacles + world->body TF and publishes /scan (LaserScan).
-
-odom_node — subscribes to /cmd_vel, integrates motion, publishes /odom and TF.
-
-map_builder — subscribes to /scan & /odom and publishes /map (OccupancyGrid).
-
-apf_controller — subscribes to /scan & /odom, exposes /set_goal service, and publishes /cmd_vel.
+- complex_obstacles_node — publishes static obstacles as visualization_msgs/MarkerArray on /obstacles.
+- lidar_from_markers_tf — listens to /obstacles + world->body TF and publishes /scan (LaserScan).
+- odom_node — subscribes to /cmd_vel, integrates motion, publishes /odom and TF.
+- map_builder — subscribes to /scan & /odom and publishes /map (OccupancyGrid).
+- apf_controller — subscribes to /scan & /odom, exposes /set_goal service, and publishes /cmd_vel.
 
 ##  Messages / Services
 
-Service srv/goal.srv:
+- Service srv/goal.srv:
 
 float64 x
 float64 y
@@ -109,24 +105,20 @@ string message
 
 Parameters (examples)
 
-Controller gains: K_GOAL, K_OBS — tune in config/params.yaml or directly in node.
-Map resolution / size — defined in map_builder.
+- Controller gains: K_GOAL, K_OBS — tune in config/params.yaml or directly in node.
+- Map resolution / size — defined in map_builder.
 
 ## Troubleshooting & Notes
 
-If RViz shows empty map: confirm /scan and /odom are publishing and TF world->body exists.
-
-If robot stuck in local minima: APF is a local planner — consider hybrid global planner or randomized escape behavior.
-
-The odometry here is simulated by integrating /cmd_vel (no encoder noise/correction).
+- If RViz shows empty map: confirm /scan and /odom are publishing and TF world->body exists.
+- If robot stuck in local minima: APF is a local planner — consider hybrid global planner or randomized escape behavior.
+- The odometry here is simulated by integrating /cmd_vel (no encoder noise/correction).
 
 ## Suggested further work
 
-Replace local APF with a hybrid planner (global path + local obstacle avoidance).
-
-Add SLAM (gmapping / Cartographer) for robust localization.
-
-Plug in real robot hardware by replacing the lidar_from_markers_tf and odom_node with real topics.
+- Replace local APF with a hybrid planner (global path + local obstacle avoidance).
+- Add SLAM (gmapping / Cartographer) for robust localization.
+- Plug in real robot hardware by replacing the lidar_from_markers_tf and odom_node with real topics.
 
 ## Authors
 
