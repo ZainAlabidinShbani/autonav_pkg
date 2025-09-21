@@ -102,12 +102,13 @@ rosservice call /set_goal "x: 5.0 y: 4.0"
 ##  Messages / Services
 
 - Service srv/goal.srv:
-
+```
 float64 x
 float64 y
 ---
 int32 success
 string message
+```
 
 ## Messages / Services
 
