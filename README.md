@@ -32,6 +32,7 @@ This repo is intended for education, demonstration, and as a base for further re
 
 ## Repository structure
 
+```text
 autonav_pkg/
 │
 ├─ package.xml
@@ -41,32 +42,32 @@ autonav_pkg/
 ├─ .gitignore
 │
 ├─ launch/
-│   └─ autonav.launch
+│ └─ autonav.launch
 │
 ├─ rviz/
-│   └─ autonav.rviz
+│ └─ autonav.rviz
 │
 ├─ xacro/
-│   └─ differential_robot.xacro
+│ └─ differential_robot.xacro
 │
 ├─ srv/
-│   └─ SetGoal.srv
+│ └─ SetGoal.srv
 │
 ├─ scripts/
-│   ├─ complex_obstacles.py
-│   ├─ lidar.py
-│   ├─ odom_node.py
-│   ├─ map.py
-│   ├─ path.py
-│   ├─ arduino.py
-│   └─ apf_controller.py
+│ ├─ complex_obstacles.py
+│ ├─ lidar.py
+│ ├─ odom_node.py
+│ ├─ map.py
+│ ├─ path.py
+│ ├─ arduino.py
+│ └─ apf_controller.py
 │
 ├─ config/
-│   └─ params.yaml
+│ └─ params.yaml
 │
 └─ docs/
-    └─ screenshots/
-
+└─ screenshots/
+```
 ---
 
 ## Quick start (run demo)
