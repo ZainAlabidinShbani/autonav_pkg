@@ -1,6 +1,6 @@
 # Autonav_pkg — Autonomous Navigation Demo (ROS)
 
-**Autonomous Navigation of a Differential Drive Robot Using LiDAR-Based Obstacle Avoidance**
+**This project demonstrates the autonomous navigation of a differential-drive robot in a simulated static environment using ROS (Robot Operating System). The robot is equipped with a LiDAR sensor for real-time obstacle detection and mapping. The system integrates several core components, including a URDF robot model, LiDAR-based perception, odometry, occupancy grid mapping, and a goal-setting service. Navigation and obstacle avoidance are achieved using an Artificial Potential Field (APF) controller, which generates attractive forces toward the target and repulsive forces away from obstacles to ensure smooth and safe motion. This package provides a complete end-to-end pipeline for robotic navigation, making it ideal for education, demonstration, and as a base for future robotics research.**
 
 **Students:** Beilassan Hdewa, Lana Al wazzeh, Zain Alabidin Shbani
 
