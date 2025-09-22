@@ -86,18 +86,18 @@ chmod +x src/autonav_pkg/src/*.py
 ```
 roslaunch autonav_pkg autonav.launch
 ```
-5. Open RViz (if not auto-started) and set Fixed Frame = world. Visualize robot_description, /scan, /map, /odom, /obstacles, TF, and Path.
+5. Open RViz (if not auto-started) and set `Fixed Frame = world`. Visualize `robot_description`, `/scan`, `/map`, `/odom`, `/obstacles`, `TF`, and `Path`.
 6. Set a goal using the service (example with rosservice):
 ```
-rosservice call /set_goal "x: 5.0 y: 4.0"
+rosservice call /set_goal "x: 5.0 y: 5.0"
 ```
-## Nodes (brief)
+## Nodes
 
-- complex_obstacles_node — publishes static obstacles as visualization_msgs/MarkerArray on /obstacles.
-- lidar_from_markers_tf — listens to /obstacles + world->body TF and publishes /scan (LaserScan).
-- odom_node — subscribes to /cmd_vel, integrates motion, publishes /odom and TF.
-- map_builder — subscribes to /scan & /odom and publishes /map (OccupancyGrid).
-- apf_controller — subscribes to /scan & /odom, exposes /set_goal service, and publishes /cmd_vel.
+- complex_obstacles_node — publishes static obstacles as `visualization_msgs/MarkerArray` on `/obstacles`.
+- lidar_from_markers_tf — listens to `/obstacles` + `world->body TF` and publishes `/scan` (LaserScan).
+- odom_node — subscribes to `/cmd_vel`, integrates motion, publishes `/odom` and `TF`.
+- map_builder — subscribes to `/scan` & `/odom` and publishes `/map` (OccupancyGrid).
+- apf_controller — subscribes to `/scan` & `/odom`, exposes `/set_goal` service, and publishes `/cmd_vel`.
 
 ##  Messages / Services
 
@@ -110,18 +110,12 @@ int32 success
 string message
 ```
 
-## Messages / Services
-
-Parameters (examples)
-
-- Controller gains: K_GOAL, K_OBS — tune in config/params.yaml or directly in node.
-- Map resolution / size — defined in map_builder.
 
 ## Troubleshooting & Notes
 
-- If RViz shows empty map: confirm /scan and /odom are publishing and TF world->body exists.
+- If RViz shows empty map: confirm `/scan` and `/odom` are publishing and TF world->body exists.
 - If robot stuck in local minima: APF is a local planner — consider hybrid global planner or randomized escape behavior.
-- The odometry here is simulated by integrating /cmd_vel (no encoder noise/correction).
+- The odometry here is simulated by integrating `/cmd_vel` (no encoder noise/correction).
 
 ## Suggested further work
 
